@@ -9,3 +9,15 @@
     }
   }
 }
+
+@mixin media-breakpoint-up($breakpoint) {
+  $min-width: map-get($grid-breakpoints, $breakpoint);
+
+  @if $min-width != null {
+    @media (min-width: #{$min-width}) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} не найден в \$grid-breakpoints.";
+  }
+}

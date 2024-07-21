@@ -1,0 +1,68 @@
+.accordion {
+  display: grid;
+  gap: 4px;
+
+  &__item {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+
+  &__control {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 60px;
+    text-align: left;
+    color: #000;
+    @include font(14px, 20px, 600);
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include media-breakpoint-up(lg) {
+      @include font(18px, 24px, 600);
+    }
+  }
+
+  &__icon {
+    color: #000;
+    transition: transform $t-duration $t-function;
+  }
+
+  &__inner {
+    display: grid;
+    overflow: hidden;
+    visibility: hidden;
+    grid-template-rows: 0fr;
+    transition-property: visibility, grid-template-rows;
+    transition-duration: $t-duration;
+    transition-timing-function: $t-function;
+  }
+
+  &__content {
+    min-height: 0;
+    transition-property: min-height, padding-bottom;
+    transition-duration: $t-duration;
+    transition-timing-function: $t-function;
+  }
+
+  &__item._active > &__inner {
+    grid-template-rows: 1fr;
+    visibility: visible;
+  }
+
+  &__item._active > &__control > &__icon {
+    transform: rotate(180deg);
+  }
+
+  &--nested &__item {
+    border-top: 1px solid gray;
+    border-radius: 0;
+    padding: 6px 8px;
+  }
+}

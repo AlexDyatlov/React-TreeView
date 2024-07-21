@@ -12,10 +12,6 @@ body {
   height: 100%;
 }
 
-body {
-  @include font(14px, 18px);
-}
-
 img {
   max-width: 100%;
   display: block;
