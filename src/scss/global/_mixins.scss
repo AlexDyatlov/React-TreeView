@@ -1,0 +1,11 @@
+@mixin font($fz, $lh, $fw: normal, $font: $main-font) {
+  font: $fw #{$fz} / #{$lh} $font;
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
