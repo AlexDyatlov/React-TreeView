@@ -13,7 +13,7 @@ interface TreeViewProps {
   className?: string;
 }
 
-function TreeView({ nodes, className }: TreeViewProps) {
+const TreeView: React.FC<TreeViewProps> = ({ nodes, className }) => {
   const dispatch = useDispatch();
   const expandedItems = useSelector(getNestedNodes());
 
@@ -54,6 +54,6 @@ function TreeView({ nodes, className }: TreeViewProps) {
       })}
     </ul>
   );
-}
+};
 
 export default TreeView;

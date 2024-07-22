@@ -26,7 +26,7 @@ const data: TreeNode[] = [
   }
 ];
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <main className="main">
@@ -36,6 +36,6 @@ function App() {
       </main>
     </>
   );
-}
+};
 
 export default App;
