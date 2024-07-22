@@ -6,6 +6,14 @@ $grid-breakpoints: (
   xxl: 1400px
 );
 
+:root {
+  --base-color: #fff;
+  --main-color: #000;
+  --secondary-color: #545454;
+  --primary-color: #8e8e8e;
+  --separator-color: #808080;
+}
+
 $t-duration: 200ms;
 $t-function: ease-in-out;
 

@@ -3,7 +3,7 @@
   gap: 4px;
 
   &__item {
-    background-color: #fff;
+    background-color: var(--base-color);
     border-radius: 12px;
     padding: 12px 16px;
   }
@@ -17,14 +17,14 @@
     width: 100%;
     min-height: 60px;
     text-align: left;
-    color: #545454;
+    color: var(--secondary-color);
     @include font(14px, 20px, 600);
     background-color: transparent;
     border: none;
     cursor: pointer;
 
     @include hover {
-      color: #000;
+      color: var(--main-color);
     }
 
     @include media-breakpoint-up(lg) {
@@ -34,6 +34,7 @@
 
   &__icon {
     transition: transform $t-duration $t-function;
+    flex-shrink: 0;
   }
 
   &__inner {
@@ -64,15 +65,11 @@
 
   &__item._disabled &__control {
     cursor: default;
-    color: #8e8e8e;
-
-    // @include hover {
-    //   color: #8e8e8e;
-    // }
+    color: var(--primary-color);
   }
 
   &--nested &__item {
-    border-top: 1px solid gray;
+    border-top: 1px solid var(--separator-color);
     border-radius: 0;
     padding: 6px 8px;
   }
