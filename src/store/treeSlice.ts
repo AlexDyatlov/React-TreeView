@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TreeState } from '../types/tree.interface';
 
 const initialState: TreeState = {
-  nestedNodes: []
+  nestedNodes: JSON.parse(localStorage.getItem('nestedNodes') || '[]')
 };
 
 export const treeSlice = createSlice({
@@ -18,6 +18,8 @@ export const treeSlice = createSlice({
       } else {
         state.nestedNodes.splice(index, 1);
       }
+
+      localStorage.setItem('nestedNodes', JSON.stringify(state.nestedNodes));
     }
   }
 });
