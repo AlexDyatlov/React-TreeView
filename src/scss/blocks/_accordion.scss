@@ -17,12 +17,15 @@
     width: 100%;
     min-height: 60px;
     text-align: left;
-    color: #000;
+    color: #545454;
     @include font(14px, 20px, 600);
-
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+    @include hover {
+      color: #000;
+    }
 
     @include media-breakpoint-up(lg) {
       @include font(18px, 24px, 600);
@@ -30,7 +33,6 @@
   }
 
   &__icon {
-    color: #000;
     transition: transform $t-duration $t-function;
   }
 
@@ -58,6 +60,15 @@
 
   &__item._active > &__control > &__icon {
     transform: rotate(180deg);
+  }
+
+  &__item._disabled &__control {
+    cursor: default;
+    color: #8e8e8e;
+
+    // @include hover {
+    //   color: #8e8e8e;
+    // }
   }
 
   &--nested &__item {
